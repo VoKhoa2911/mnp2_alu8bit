@@ -1,0 +1,15 @@
+1747563361 /home/admin/shared/lab4/synthesis/00_src/full_adder.v
+1747488547 /home/admin/shared/lab4/synthesis/00_src/ripple_adder_4bit.v
+1747656228 /home/admin/shared/lab4/synthesis/00_src/synth_wrapper.v
+1747655642 /home/admin/shared/lab4/synthesis/01_tb/testbench.v
+1747653578 /home/admin/shared/lab4/synthesis/00_src/alu_8bit.v
+1747566885 /home/admin/shared/lab4/synthesis/00_src/and_8bit.v
+1747563834 /home/admin/shared/lab4/synthesis/00_src/csa_4bit.v
+1747565921 /home/admin/shared/lab4/synthesis/00_src/csa_8bit.v
+1747646924 /home/admin/shared/lab4/synthesis/00_src/mux2.v
+1747567345 /home/admin/shared/lab4/synthesis/00_src/not_8bit.v
+1747568547 /home/admin/shared/lab4/synthesis/00_src/or_8bit.v
+1747563651 /home/admin/shared/lab4/synthesis/00_src/ripple_4bit.v
+1747650300 /home/admin/shared/lab4/synthesis/00_src/shift_left_8bit.v
+1747653531 /home/admin/shared/lab4/synthesis/00_src/shift_right_8bit.v
+1747568048 /home/admin/shared/lab4/synthesis/00_src/sub_8bit.v

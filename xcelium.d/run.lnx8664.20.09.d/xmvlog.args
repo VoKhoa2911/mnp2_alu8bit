@@ -1,0 +1,31 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+./xcelium.d/run.lnx8664.20.09.d
+-RUNMODE
+-sv
+00_src/alu_8bit.v
+00_src/and_8bit.v
+00_src/csa_4bit.v
+00_src/csa_8bit.v
+00_src/full_adder.v
+00_src/mux2.v
+00_src/not_8bit.v
+00_src/or_8bit.v
+00_src/ripple_4bit.v
+00_src/shift_left_8bit.v
+00_src/shift_right_8bit.v
+00_src/sub_8bit.v
+00_src/synth_wrapper.v
+01_tb/testbench.v
+-CDSLIB
+./xcelium.d/run.lnx8664.20.09.d/cdsrun.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.20.09.d/hdlrun.var
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./xcelium.d/run.lnx8664.20.09.d/xllibs
+-ALLOWUNBOUND
