@@ -1,0 +1,220 @@
+xrun(64): 20.09-s001: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+xrun: *W,FMDEF: The default file type mapping of .sv is being overwritten.
+TOOL:	xrun(64)	20.09-s001: Started on May 19, 2025 at 08:07:31 EDT
+xrun
+	-gui
+	+xm64bit
+	-sv
+	-vlogext .sv
+	-f 00_src/flist.f
+		00_src/alu_8bit.v
+		00_src/and_8bit.v
+		00_src/csa_4bit.v
+		00_src/csa_8bit.v
+		00_src/full_adder.v
+		00_src/mux2.v
+		00_src/not_8bit.v
+		00_src/or_8bit.v
+		00_src/ripple_4bit.v
+		00_src/shift_left_8bit.v
+		00_src/shift_right_8bit.v
+		00_src/sub_8bit.v
+		00_src/synth_wrapper.v
+	01_tb/testbench.v
+	-timescale 1ns/10ps
+	+access+rcw
+file: 00_src/alu_8bit.v
+	module worklib.alu8bit:v
+		errors: 0, warnings: 0
+file: 00_src/and_8bit.v
+	module worklib.and_8bit:v
+		errors: 0, warnings: 0
+file: 00_src/csa_4bit.v
+	module worklib.csa_block:v
+		errors: 0, warnings: 0
+file: 00_src/csa_8bit.v
+	module worklib.csa_8bit:v
+		errors: 0, warnings: 0
+file: 00_src/full_adder.v
+	module worklib.full_adder:v
+		errors: 0, warnings: 0
+file: 00_src/mux2.v
+	module worklib.mux2:v
+		errors: 0, warnings: 0
+file: 00_src/not_8bit.v
+	module worklib.not_8bit:v
+		errors: 0, warnings: 0
+file: 00_src/or_8bit.v
+	module worklib.or_8bit:v
+		errors: 0, warnings: 0
+file: 00_src/ripple_4bit.v
+	module worklib.ripple_4bit:v
+		errors: 0, warnings: 0
+file: 00_src/shift_left_8bit.v
+	module worklib.shift_left_8bit:v
+		errors: 0, warnings: 0
+file: 00_src/shift_right_8bit.v
+	module worklib.shift_right_8bit:v
+		errors: 0, warnings: 0
+file: 00_src/sub_8bit.v
+	module worklib.sub_8bit:v
+		errors: 0, warnings: 0
+file: 00_src/synth_wrapper.v
+	module worklib.synth_wrapper:v
+		errors: 0, warnings: 0
+file: 01_tb/testbench.v
+	module worklib.testbench:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		csa_block
+		testbench
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.shift_right_8bit:v <0x76cfcd34>
+			streams:   2, words:   814
+		worklib.shift_left_8bit:v <0x2180e947>
+			streams:   2, words:   814
+		worklib.csa_8bit:v <0x0af42c00>
+			streams:   2, words:   453
+		worklib.alu8bit:v <0x6f0d18b3>
+			streams:   5, words:  5435
+		worklib.synth_wrapper:v <0x71f25193>
+			streams:   7, words:  3016
+		worklib.testbench:v <0x1f09d30b>
+			streams:   7, words:  7478
+		worklib.csa_block:v <0x037c789c>
+			streams:   4, words:   925
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                 91      14
+		Primitives:             368       5
+		Resolved nets:            0       1
+		Registers:               16      16
+		Scalar wires:           118       -
+		Expanded wires:          16       2
+		Vectored wires:          16       -
+		Always blocks:            3       3
+		Initial blocks:           1       1
+		Cont. assignments:       11      13
+		Pseudo assignments:      14      13
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.csa_block:v
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /opt/cadence/XCELIUM2009/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm testbench.a testbench.alu_flag testbench.b testbench.carry testbench.clk testbench.expected testbench.i testbench.op testbench.result testbench.rst_n
+Created probe 1
+xcelium> run
+FAIL: op = 001, a = 24, b = 81 => expected = a3, got = a5
+PASS: op = 101, a = 63, b = 0d => result = 60
+FAIL: op = 001, a = 65, b = 12 => expected = 53, got = 77
+PASS: op = 101, a = 0d, b = 76 => result = 40
+FAIL: op = 001, a = ed, b = 8c => expected = 61, got = XX
+PASS: op = 010, a = c6, b = c5 => result = c4
+PASS: op = 010, a = e5, b = 77 => result = 65
+PASS: op = 110, a = 8f, b = f2 => result = 23
+PASS: op = 100, a = e8, b = c5 => result = 17
+PASS: op = 101, a = bd, b = 2d => result = a0
+FAIL: op = 000, a = 63, b = 0a => expected = 6d, got = 6X
+PASS: op = 101, a = 20, b = aa => result = 80
+PASS: op = 101, a = 96, b = 13 => result = b0
+PASS: op = 101, a = 53, b = 6b => result = 98
+PASS: op = 101, a = 02, b = ae => result = 80
+PASS: op = 010, a = cf, b = 23 => result = 03
+PASS: op = 010, a = ca, b = 3c => result = 08
+PASS: op = 000, a = 8a, b = 41 => result = cb
+PASS: op = 011, a = 78, b = 89 => result = f9
+PASS: op = 110, a = b6, b = c6 => result = 02
+PASS: op = 011, a = bc, b = 2a => result = be
+PASS: op = 111, a = 71, b = 85 => result = 71
+PASS: op = 110, a = 3b, b = 3a => result = 0e
+FAIL: op = 001, a = 15, b = f1 => expected = 24, got = XX
+PASS: op = 111, a = 62, b = 4c => result = 62
+PASS: op = 111, a = 8f, b = f8 => result = 8f
+PASS: op = 011, a = 9f, b = 5c => result = df
+FAIL: op = 000, a = 89, b = 49 => expected = d2, got = XX
+PASS: op = 110, a = d7, b = 51 => result = 6b
+PASS: op = 000, a = 0c, b = c2 => result = ce
+PASS: op = 010, a = 77, b = 3d => result = 35
+FAIL: op = 001, a = 7e, b = 6d => expected = 11, got = xX
+PASS: op = 101, a = 1f, b = d3 => result = f8
+FAIL: op = 001, a = 78, b = 5b => expected = 1d, got = x3
+FAIL: op = 000, a = 3f, b = 2a => expected = 69, got = XX
+PASS: op = 100, a = 86, b = 8e => result = 79
+PASS: op = 011, a = fa, b = 26 => result = fe
+PASS: op = 011, a = a3, b = 2f => result = af
+PASS: op = 111, a = 5f, b = 44 => result = 5f
+PASS: op = 010, a = cb, b = e6 => result = c2
+PASS: op = 010, a = 29, b = ed => result = 29
+PASS: op = 111, a = 65, b = b5 => result = 65
+FAIL: op = 000, a = 79, b = 44 => expected = bd, got = Xd
+PASS: op = 110, a = 2a, b = ab => result = 05
+PASS: op = 101, a = dc, b = 9a => result = 70
+PASS: op = 110, a = c3, b = 56 => result = 03
+PASS: op = 110, a = 67, b = 0a => result = 19
+FAIL: op = 000, a = 38, b = 79 => expected = b1, got = x1
+PASS: op = 100, a = 94, b = 93 => result = 6b
+PASS: op = 101, a = 59, b = db => result = c8
+PASS: op = 110, a = d9, b = 6d => result = 06
+PASS: op = 101, a = ca, b = b6 => result = 80
+PASS: op = 111, a = 46, b = 04 => result = 46
+FAIL: op = 000, a = 69, b = b4 => expected = 1d, got = Xd
+PASS: op = 111, a = 28, b = 2d => result = 28
+PASS: op = 100, a = 2e, b = 08 => result = d1
+PASS: op = 100, a = fd, b = 29 => result = 02
+PASS: op = 101, a = 86, b = da => result = 18
+PASS: op = 011, a = 66, b = 70 => result = 76
+PASS: op = 010, a = ba, b = 5e => result = 1a
+FAIL: op = 001, a = d5, b = 1a => expected = bb, got = Xf
+FAIL: op = 000, a = 37, b = 96 => expected = cd, got = XX
+PASS: op = 101, a = 26, b = b6 => result = 80
+FAIL: op = 000, a = dc, b = 86 => expected = 62, got = XX
+PASS: op = 111, a = 7e, b = db => result = 7e
+FAIL: op = 001, a = 79, b = fa => expected = 7f, got = x3
+PASS: op = 110, a = 17, b = a1 => result = 0b
+PASS: op = 101, a = 50, b = f5 => result = 00
+PASS: op = 101, a = 29, b = c1 => result = 52
+PASS: op = 011, a = 98, b = 4b => result = db
+PASS: op = 110, a = ec, b = 8a => result = 3b
+FAIL: op = 001, a = a8, b = a9 => expected = ff, got = X1
+PASS: op = 111, a = 0e, b = e6 => result = 0e
+PASS: op = 101, a = 2a, b = 2a => result = a8
+FAIL: op = 001, a = 9e, b = 38 => expected = 66, got = X6
+PASS: op = 011, a = c8, b = ca => result = ca
+PASS: op = 110, a = 6b, b = c7 => result = 00
+FAIL: op = 001, a = ba, b = c4 => expected = f6, got = 7e
+PASS: op = 111, a = 92, b = b4 => result = 92
+PASS: op = 010, a = 86, b = fa => result = 82
+PASS: op = 100, a = 32, b = bd => result = cd
+FAIL: op = 001, a = e4, b = ca => expected = 1a, got = Xe
+PASS: op = 011, a = a1, b = 8e => result = af
+FAIL: op = 001, a = 0b, b = ef => expected = 1c, got = XX
+PASS: op = 111, a = 36, b = 75 => result = 36
+PASS: op = 110, a = 6b, b = 88 => result = 6b
+FAIL: op = 000, a = 9b, b = 92 => expected = 2d, got = XX
+PASS: op = 010, a = 2d, b = 4b => result = 09
+PASS: op = 100, a = 1e, b = 0d => result = e1
+PASS: op = 110, a = 18, b = d1 => result = 0c
+FAIL: op = 000, a = 41, b = 3b => expected = 7c, got = 7X
+PASS: op = 011, a = 53, b = 56 => result = 57
+PASS: op = 011, a = e2, b = 04 => result = e6
+FAIL: op = 000, a = d8, b = 12 => expected = ea, got = Xa
+FAIL: op = 001, a = 39, b = e5 => expected = 54, got = XX
+FAIL: op = 000, a = 2b, b = 81 => expected = ac, got = aX
+PASS: op = 111, a = 27, b = a1 => result = 27
+PASS: op = 110, a = 04, b = 58 => result = 04
+PASS: op = 110, a = 14, b = 12 => result = 05
+PASS: op = 101, a = b1, b = 55 => result = 20
+Simulation complete via $finish(1) at time 2010 NS + 0
+./01_tb/testbench.v:75         $finish;
+xcelium> 

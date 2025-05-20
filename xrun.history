@@ -1,0 +1,2 @@
+s1(19May2025:07:58:42):  xrun -gui +xm64bit -sv -vlogext .sv -f 00_src/flist.f 01_tb/testbench.v -timescale 1ns/10ps +access+rcw 
+s2(19May2025:08:07:32):  xrun -gui +xm64bit -sv -vlogext .sv -f 00_src/flist.f 01_tb/testbench.v -timescale 1ns/10ps +access+rcw 
